@@ -1,0 +1,452 @@
+[
+	{
+		"key":"Totaal uitgaven",
+		"values":
+		[	{"Jaar":1900,"Mil Euro":74},
+			{"Jaar":1910,"Mil Euro":102},
+			{"Jaar":1920,"Mil Euro":550},
+			{"Jaar":1930,"Mil Euro":707},
+			{"Jaar":1940,"Mil Euro":1359},
+			{"Jaar":1950,"Mil Euro":3294},
+			{"Jaar":1960,"Mil Euro":6960},
+			{"Jaar":1970,"Mil Euro":21481},
+			{"Jaar":1980,"Mil Euro":79676},
+			{"Jaar":1990,"Mil Euro":97974},
+			{"Jaar":2000,"Mil Euro":144360},
+			{"Jaar":2006,"Mil Euro":186450},
+			{"Jaar":2007,"Mil Euro":194789},
+			{"Jaar":2008,"Mil Euro":238864},
+			{"Jaar":2009,"Mil Euro":246698},
+			{"Jaar":2010,"Mil Euro":237570},
+			{"Jaar":2011,"Mil Euro":236681},
+			{"Jaar":2012,"Mil Euro":236390},
+			{"Jaar":2013,"Mil Euro":225423}
+		]
+	},
+	{
+		"key":"Provinciefonds",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":null},
+			{"Jaar":1940,"Mil Euro":null},
+			{"Jaar":1950,"Mil Euro":14},
+			{"Jaar":1960,"Mil Euro":30},
+			{"Jaar":1970,"Mil Euro":103},
+			{"Jaar":1980,"Mil Euro":412},
+			{"Jaar":1990,"Mil Euro":531},
+			{"Jaar":2000,"Mil Euro":940},
+			{"Jaar":2006,"Mil Euro":1090},
+			{"Jaar":2007,"Mil Euro":1128},
+			{"Jaar":2008,"Mil Euro":1205},
+			{"Jaar":2009,"Mil Euro":1329},
+			{"Jaar":2010,"Mil Euro":1483},
+			{"Jaar":2011,"Mil Euro":1268},
+			{"Jaar":2012,"Mil Euro":1686},
+			{"Jaar":2013,"Mil Euro":1553}
+		]
+	},
+	{
+		"key":"Gemeentefonds",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":null},
+			{"Jaar":1940,"Mil Euro":44},
+			{"Jaar":1950,"Mil Euro":160},
+			{"Jaar":1960,"Mil Euro":613},
+			{"Jaar":1970,"Mil Euro":2126},
+			{"Jaar":1980,"Mil Euro":6603},
+			{"Jaar":1990,"Mil Euro":6517},
+			{"Jaar":2000,"Mil Euro":11543},
+			{"Jaar":2006,"Mil Euro":13436},
+			{"Jaar":2007,"Mil Euro":15094},
+			{"Jaar":2008,"Mil Euro":16247},
+			{"Jaar":2009,"Mil Euro":17683},
+			{"Jaar":2010,"Mil Euro":18381},
+			{"Jaar":2011,"Mil Euro":18576},
+			{"Jaar":2012,"Mil Euro":18501},
+			{"Jaar":2013,"Mil Euro":17989}
+		]
+	},
+	{
+		"key":"BTW Compensatiefonds",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":null},
+			{"Jaar":1940,"Mil Euro":null},
+			{"Jaar":1950,"Mil Euro":null},
+			{"Jaar":1960,"Mil Euro":null},
+			{"Jaar":1970,"Mil Euro":null},
+			{"Jaar":1980,"Mil Euro":null},
+			{"Jaar":1990,"Mil Euro":null},
+			{"Jaar":2000,"Mil Euro":null},
+			{"Jaar":2006,"Mil Euro":1939},
+			{"Jaar":2007,"Mil Euro":2069},
+			{"Jaar":2008,"Mil Euro":2348},
+			{"Jaar":2009,"Mil Euro":2577},
+			{"Jaar":2010,"Mil Euro":2789},
+			{"Jaar":2011,"Mil Euro":2788},
+			{"Jaar":2012,"Mil Euro":null},
+			{"Jaar":2013,"Mil Euro":null}
+		]
+	},
+	{
+		"key":"Ministerie van Defensie",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":45},
+			{"Jaar":1940,"Mil Euro":78},
+			{"Jaar":1950,"Mil Euro":338},
+			{"Jaar":1960,"Mil Euro":782},
+			{"Jaar":1970,"Mil Euro":1822},
+			{"Jaar":1980,"Mil Euro":4995},
+			{"Jaar":1990,"Mil Euro":6430},
+			{"Jaar":2000,"Mil Euro":6730},
+			{"Jaar":2006,"Mil Euro":8145},
+			{"Jaar":2007,"Mil Euro":8388},
+			{"Jaar":2008,"Mil Euro":8488},
+			{"Jaar":2009,"Mil Euro":8733},
+			{"Jaar":2010,"Mil Euro":8472},
+			{"Jaar":2011,"Mil Euro":8157},
+			{"Jaar":2012,"Mil Euro":8067},
+			{"Jaar":2013,"Mil Euro":7702}
+		]
+	},
+	{
+		"key":"Buitenlandse Zaken",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":2},
+			{"Jaar":1940,"Mil Euro":1},
+			{"Jaar":1950,"Mil Euro":18},
+			{"Jaar":1960,"Mil Euro":122},
+			{"Jaar":1970,"Mil Euro":235},
+			{"Jaar":1980,"Mil Euro":1216},
+			{"Jaar":1990,"Mil Euro":2262},
+			{"Jaar":2000,"Mil Euro":5535},
+			{"Jaar":2006,"Mil Euro":11731},
+			{"Jaar":2007,"Mil Euro":11864},
+			{"Jaar":2008,"Mil Euro":12788},
+			{"Jaar":2009,"Mil Euro":11136},
+			{"Jaar":2010,"Mil Euro":10984},
+			{"Jaar":2011,"Mil Euro":11015},
+			{"Jaar":2012,"Mil Euro":10774},
+			{"Jaar":2013,"Mil Euro":8598}
+		]
+	},
+	{
+		"key":"Justitie",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":13},
+			{"Jaar":1940,"Mil Euro":15},
+			{"Jaar":1950,"Mil Euro":50},
+			{"Jaar":1960,"Mil Euro":104},
+			{"Jaar":1970,"Mil Euro":369},
+			{"Jaar":1980,"Mil Euro":1250},
+			{"Jaar":1990,"Mil Euro":1732},
+			{"Jaar":2000,"Mil Euro":4320},
+			{"Jaar":2006,"Mil Euro":5710},
+			{"Jaar":2007,"Mil Euro":5925},
+			{"Jaar":2008,"Mil Euro":5825},
+			{"Jaar":2009,"Mil Euro":6240},
+			{"Jaar":2010,"Mil Euro":6099},
+			{"Jaar":2011,"Mil Euro":null},
+			{"Jaar":2012,"Mil Euro":null},
+			{"Jaar":2013,"Mil Euro":null}
+		]
+	},
+	{
+		"key":"Veiligheid en Justitie",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":null},
+			{"Jaar":1940,"Mil Euro":null},
+			{"Jaar":1950,"Mil Euro":null},
+			{"Jaar":1960,"Mil Euro":null},
+			{"Jaar":1970,"Mil Euro":null},
+			{"Jaar":1980,"Mil Euro":null},
+			{"Jaar":1990,"Mil Euro":null},
+			{"Jaar":2000,"Mil Euro":null},
+			{"Jaar":2006,"Mil Euro":null},
+			{"Jaar":2007,"Mil Euro":null},
+			{"Jaar":2008,"Mil Euro":null},
+			{"Jaar":2009,"Mil Euro":null},
+			{"Jaar":2010,"Mil Euro":null},
+			{"Jaar":2011,"Mil Euro":11438},
+			{"Jaar":2012,"Mil Euro":11467},
+			{"Jaar":2013,"Mil Euro":12383}
+		]
+	},
+	{
+		"key":"Onderwijs, Cultuur en Wetenschap",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":72},
+			{"Jaar":1940,"Mil Euro":66},
+			{"Jaar":1950,"Mil Euro":158},
+			{"Jaar":1960,"Mil Euro":729},
+			{"Jaar":1970,"Mil Euro":3328},
+			{"Jaar":1980,"Mil Euro":10205},
+			{"Jaar":1990,"Mil Euro":14008},
+			{"Jaar":2000,"Mil Euro":21347},
+			{"Jaar":2006,"Mil Euro":29341},
+			{"Jaar":2007,"Mil Euro":31920},
+			{"Jaar":2008,"Mil Euro":34733},
+			{"Jaar":2009,"Mil Euro":36285},
+			{"Jaar":2010,"Mil Euro":37173},
+			{"Jaar":2011,"Mil Euro":33964},
+			{"Jaar":2012,"Mil Euro":34169},
+			{"Jaar":2013,"Mil Euro":35161}
+		]
+	},
+	{
+		"key":"Sociale Zaken en Werkgelegenheid",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":null},
+			{"Jaar":1910,"Mil Euro":null},
+			{"Jaar":1920,"Mil Euro":null},
+			{"Jaar":1930,"Mil Euro":null},
+			{"Jaar":1940,"Mil Euro":46},
+			{"Jaar":1950,"Mil Euro":122},
+			{"Jaar":1960,"Mil Euro":236},
+			{"Jaar":1970,"Mil Euro":1034},
+			{"Jaar":1980,"Mil Euro":6069},
+			{"Jaar":1990,"Mil Euro":15143},
+			{"Jaar":2000,"Mil Euro":15179},
+			{"Jaar":2006,"Mil Euro":26206},
+			{"Jaar":2007,"Mil Euro":26981},
+			{"Jaar":2008,"Mil Euro":21889},
+			{"Jaar":2009,"Mil Euro":26901},
+			{"Jaar":2010,"Mil Euro":29137},
+			{"Jaar":2011,"Mil Euro":30767},
+			{"Jaar":2012,"Mil Euro":31898},
+			{"Jaar":2013,"Mil Euro":29290}
+		]
+	},
+	{
+		"key":"Overige uitgaven",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":74},
+			{"Jaar":1910,"Mil Euro":102},
+			{"Jaar":1920,"Mil Euro":550},
+			{"Jaar":1930,"Mil Euro":575},
+			{"Jaar":1940,"Mil Euro":1109},
+			{"Jaar":1950,"Mil Euro":2435},
+			{"Jaar":1960,"Mil Euro":4343},
+			{"Jaar":1970,"Mil Euro":12465},
+			{"Jaar":1980,"Mil Euro":48926},
+			{"Jaar":1990,"Mil Euro":51351},
+			{"Jaar":2000,"Mil Euro":78766},
+			{"Jaar":2006,"Mil Euro":88852},
+			{"Jaar":2007,"Mil Euro":91420},
+			{"Jaar":2008,"Mil Euro":135341},
+			{"Jaar":2009,"Mil Euro":135814},
+			{"Jaar":2010,"Mil Euro":123052},
+			{"Jaar":2011,"Mil Euro":118708},
+			{"Jaar":2012,"Mil Euro":119828},
+			{"Jaar":2013,"Mil Euro":112747}
+		]
+	},
+	{
+		"key":"Totaal ontvangsten",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":75},
+			{"Jaar":1910,"Mil Euro":101},
+			{"Jaar":1920,"Mil Euro":497},
+			{"Jaar":1930,"Mil Euro":738},
+			{"Jaar":1940,"Mil Euro":997},
+			{"Jaar":1950,"Mil Euro":3493},
+			{"Jaar":1960,"Mil Euro":7039},
+			{"Jaar":1970,"Mil Euro":20073},
+			{"Jaar":1980,"Mil Euro":74010},
+			{"Jaar":1990,"Mil Euro":93886},
+			{"Jaar":2000,"Mil Euro":132313},
+			{"Jaar":2006,"Mil Euro":188458},
+			{"Jaar":2007,"Mil Euro":195485},
+			{"Jaar":2008,"Mil Euro":236041},
+			{"Jaar":2009,"Mil Euro":245824},
+			{"Jaar":2010,"Mil Euro":234957},
+			{"Jaar":2011,"Mil Euro":227835},
+			{"Jaar":2012,"Mil Euro":231511},
+			{"Jaar":2013,"Mil Euro":228808}
+		]
+	},
+	{
+		"key":"Belasting opbrengsten",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":54},
+			{"Jaar":1910,"Mil Euro":69},
+			{"Jaar":1920,"Mil Euro":337},
+			{"Jaar":1930,"Mil Euro":265},
+			{"Jaar":1940,"Mil Euro":310},
+			{"Jaar":1950,"Mil Euro":1872},
+			{"Jaar":1960,"Mil Euro":4247},
+			{"Jaar":1970,"Mil Euro":12929},
+			{"Jaar":1980,"Mil Euro":40132},
+			{"Jaar":1990,"Mil Euro":59080},
+			{"Jaar":2000,"Mil Euro":94582},
+			{"Jaar":2006,"Mil Euro":126844},
+			{"Jaar":2007,"Mil Euro":134938},
+			{"Jaar":2008,"Mil Euro":138068},
+			{"Jaar":2009,"Mil Euro":124876},
+			{"Jaar":2010,"Mil Euro":134481},
+			{"Jaar":2011,"Mil Euro":131541},
+			{"Jaar":2012,"Mil Euro":127861},
+			{"Jaar":2013,"Mil Euro":129797}
+		]
+	},
+	{
+		"key":"Overige opbrengsten",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":20},
+			{"Jaar":1910,"Mil Euro":33},
+			{"Jaar":1920,"Mil Euro":160},
+			{"Jaar":1930,"Mil Euro":473},
+			{"Jaar":1940,"Mil Euro":687},
+			{"Jaar":1950,"Mil Euro":1620},
+			{"Jaar":1960,"Mil Euro":2793},
+			{"Jaar":1970,"Mil Euro":7144},
+			{"Jaar":1980,"Mil Euro":33877},
+			{"Jaar":1990,"Mil Euro":34806},
+			{"Jaar":2000,"Mil Euro":37731},
+			{"Jaar":2006,"Mil Euro":61614},
+			{"Jaar":2007,"Mil Euro":60547},
+			{"Jaar":2008,"Mil Euro":97973},
+			{"Jaar":2009,"Mil Euro":120948},
+			{"Jaar":2010,"Mil Euro":100476},
+			{"Jaar":2011,"Mil Euro":96294},
+			{"Jaar":2012,"Mil Euro":103650},
+			{"Jaar":2013,"Mil Euro":99011}
+		]
+	},
+	{
+		"key":"Uitgave minus opbrengsten",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":1},
+			{"Jaar":1910,"Mil Euro":0},
+			{"Jaar":1920,"Mil Euro":-53},
+			{"Jaar":1930,"Mil Euro":30},
+			{"Jaar":1940,"Mil Euro":-361},
+			{"Jaar":1950,"Mil Euro":199},
+			{"Jaar":1960,"Mil Euro":79},
+			{"Jaar":1970,"Mil Euro":-1408},
+			{"Jaar":1980,"Mil Euro":-5666},
+			{"Jaar":1990,"Mil Euro":-4088},
+			{"Jaar":2000,"Mil Euro":-12047},
+			{"Jaar":2006,"Mil Euro":2009},
+			{"Jaar":2007,"Mil Euro":696},
+			{"Jaar":2008,"Mil Euro":-2823},
+			{"Jaar":2009,"Mil Euro":-874},
+			{"Jaar":2010,"Mil Euro":-2613},
+			{"Jaar":2011,"Mil Euro":-8847},
+			{"Jaar":2012,"Mil Euro":-4879},
+			{"Jaar":2013,"Mil Euro":3385}
+		]
+	},
+	{
+		"key":"Totaal schuld 31 december",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":520},
+			{"Jaar":1910,"Mil Euro":524},
+			{"Jaar":1920,"Mil Euro":1083},
+			{"Jaar":1930,"Mil Euro":1122},
+			{"Jaar":1940,"Mil Euro":2050},
+			{"Jaar":1950,"Mil Euro":9679},
+			{"Jaar":1960,"Mil Euro":7854},
+			{"Jaar":1970,"Mil Euro":14099},
+			{"Jaar":1980,"Mil Euro":42019},
+			{"Jaar":1990,"Mil Euro":137611},
+			{"Jaar":2000,"Mil Euro":194025},
+			{"Jaar":2006,"Mil Euro":225358},
+			{"Jaar":2007,"Mil Euro":224522},
+			{"Jaar":2008,"Mil Euro":272533},
+			{"Jaar":2009,"Mil Euro":301640},
+			{"Jaar":2010,"Mil Euro":323943},
+			{"Jaar":2011,"Mil Euro":336546},
+			{"Jaar":2012,"Mil Euro":362624},
+			{"Jaar":2013,"Mil Euro":369264}
+		]
+	},
+	{
+		"key":"Gevestigde schuld nominaal",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":520},
+			{"Jaar":1910,"Mil Euro":509},
+			{"Jaar":1920,"Mil Euro":991},
+			{"Jaar":1930,"Mil Euro":1117},
+			{"Jaar":1940,"Mil Euro":1425},
+			{"Jaar":1950,"Mil Euro":5222},
+			{"Jaar":1960,"Mil Euro":6283},
+			{"Jaar":1970,"Mil Euro":10691},
+			{"Jaar":1980,"Mil Euro":35436},
+			{"Jaar":1990,"Mil Euro":141629},
+			{"Jaar":2000,"Mil Euro":174546},
+			{"Jaar":2006,"Mil Euro":198512},
+			{"Jaar":2007,"Mil Euro":193113},
+			{"Jaar":2008,"Mil Euro":210791},
+			{"Jaar":2009,"Mil Euro":239516},
+			{"Jaar":2010,"Mil Euro":263422},
+			{"Jaar":2011,"Mil Euro":286462},
+			{"Jaar":2012,"Mil Euro":319857},
+			{"Jaar":2013,"Mil Euro":340393}
+		]
+	},
+	{
+		"key":"Netto vlottende schuld",
+		"values":
+		[
+			{"Jaar":1900,"Mil Euro":0},
+			{"Jaar":1910,"Mil Euro":15},
+			{"Jaar":1920,"Mil Euro":92},
+			{"Jaar":1930,"Mil Euro":5},
+			{"Jaar":1940,"Mil Euro":625},
+			{"Jaar":1950,"Mil Euro":4457},
+			{"Jaar":1960,"Mil Euro":1571},
+			{"Jaar":1970,"Mil Euro":3408},
+			{"Jaar":1980,"Mil Euro":6583},
+			{"Jaar":1990,"Mil Euro":-4019},
+			{"Jaar":2000,"Mil Euro":19479},
+			{"Jaar":2006,"Mil Euro":26846},
+			{"Jaar":2007,"Mil Euro":31409},
+			{"Jaar":2008,"Mil Euro":61742},
+			{"Jaar":2009,"Mil Euro":62124},
+			{"Jaar":2010,"Mil Euro":60521},
+			{"Jaar":2011,"Mil Euro":50084},
+			{"Jaar":2012,"Mil Euro":42767},
+			{"Jaar":2013,"Mil Euro":28871}
+		]
+	}
+
+]

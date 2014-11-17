@@ -1,0 +1,11 @@
+<ul>
+	<div class="dimensionBox" ng-repeat="dimension in dataCtrl.dimensions">
+		<li data-drag="true" ng-model="dimension.name" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}" data-jqyoui-options="{helper: 'clone', appendTo: 'body'}">
+			{{ dimension.name }}
+			<div class="icon">
+				<span class='glyphicon glyphicon-align-justify'></span>
+			</div>
+		</li>
+		<div on-handle-up="dataCtrl.createFilterString()" ng-hide="dimension.min == 0 && dimension.max == 0" range-slider min="dimension.min" max="dimension.max" model-min="dimension.userMin" model-max="dimension.userMax"></div>
+	</div>
+</ul>

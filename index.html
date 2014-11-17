@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/nv.d3.css">
+        <link rel="stylesheet" href="css/angular.rangeSlider.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body ng-app="nVision" ng-controller="dataController as dataCtrl">
+    <div style="height:100%" ng-controller="visualizations as visCtrl">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>   
+
+            <div id="logoBox">
+                <h1><span class="green">N</span>VISION</h1>
+            </div>
+
+            <nav id="navigation">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li ng-repeat="visualization in visCtrl.visualizations" ng-click="visCtrl.setVis(visualization);" role="presentation" ng-class="{active: (visualization.enabled === true)}"> <a href="#"><img ng-src="{{visualization.iconUrl}}" title="{{visualization.name}}"></a></li>
+                </ul>
+            </nav>
+
+           <!--  <div id="filterBox">
+                <string-filter></string-filter>
+            </div> -->
+
+        </header>
+        
+        <nav id="sidebar">
+            <!-- Dimension list -->
+            <h3>Dimensions</h3>
+            <dimension-list></dimension-list>
+            <div class="clearfix"></div>
+            
+            
+            <div ng-class="{'has-error': (dataCtrl.dataError === true)}" class="data-loader">
+                <input class="form-control" ng-model="dataCtrl.dataUrl" ng-bind="dataCtrl.dataUrl">
+                <button ng-click="dataCtrl.loadData(dataCtrl.dataUrl)" title="Load Data" class="btn btn-default"><span class="glyphicon glyphicon-cloud-download"></span></button>
+            </div>
+        </nav>
+        
+        <section id="visualizations" class="with-transitions">
+            <scatter-chart ng-show="visCtrl.visualizations[0].enabled" data="dataCtrl.filteredData"></scatter-chart>
+            <line-chart ng-show="visCtrl.visualizations[1].enabled" data="dataCtrl.filteredData"></line-chart>
+            <!-- <line-with-focus-chart data="ndataCtrl.filteredData"></line-with-focus-chart> -->
+            <stacked-area-chart ng-show="visCtrl.visualizations[2].enabled" data="dataCtrl.filteredData"></stacked-area-chart>
+            <multi-bar-chart ng-show="visCtrl.visualizations[3].enabled" data="dataCtrl.filteredData"></multi-bar-chart>
+            <pie-chart ng-show="visCtrl.visualizations[4].enabled" data="dataCtrl.filteredData"></pie-chart>
+
+            <div ng-show="visCtrl.visualizations[5].enabled" id="tablesContainer">
+                <datatable ng-repeat="table in dataCtrl.filteredData">
+                </datatable>
+            </div>
+        </section>
+
+        <script src="js/vendor/jquery-1.11.1.min.js"></script>
+        <script src="js/vendor/jquery-ui.min.js"></script>
+        <script src="js/vendor/jquery-ui-touch-punch.min.js"></script>
+        <script src="js/vendor/d3.min.js"></script>
+        <script src="js/vendor/angular.min.js"></script> <!-- change to minified version when done -->
+        <script src="js/vendor/angular-dragdrop.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/vendor/nv.d3.min.js"></script>
+        <script src="js/vendor/angular.rangeSlider.js"></script>
+        
+        <!-- Angular javascript files -->
+        <script src="js/directives/filters.js"></script>
+        <script src="js/directives/framework.js"></script>
+        <script src="js/directives/visualizations.js"></script>      
+
+        <script src="js/app.js"></script>
+    </div>
+    </body>
+</html>
