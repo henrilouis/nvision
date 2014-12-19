@@ -1,0 +1,10 @@
+<ul>
+	<div class="dimensionBox" ng-repeat="dimension in sidebarCtrl.dimensions">
+		<li ng-class="{string: dimension.min == 0 && dimension.max == 0}" class="drag" data-drag="true" ng-model="dimension" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}" data-jqyoui-options="{helper: 'clone', appendTo: 'body'}">
+			{{ dimension.name }}
+			<div class="icon">
+				<span class='glyphicon glyphicon-align-justify'></span>
+			</div>
+		</li>
+	</div>
+</ul>

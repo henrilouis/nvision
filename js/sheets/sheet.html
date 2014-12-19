@@ -1,0 +1,10 @@
+<header id="sheet-header">
+	<ul class="visSelector">
+	    <li ng-repeat="visualization in sheetCtrl.visualizations" ng-click="sheetCtrl.selectVis(visualization)"><button class="btn btn-default" ng-class="{active: sheetCtrl.visualization === visualization}"><img ng-src="{{visualization.iconUrl}}" title="{{visualization.name}}"></button></li>
+	</ul>
+	<dimension-drop></dimension-drop>
+	<local-filters></local-filters>
+</header>
+<section id="visualization">
+
+</section>

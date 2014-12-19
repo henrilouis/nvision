@@ -101,6 +101,8 @@
                            '<div class="ngrs-handle ngrs-handle-min"><i></i></div>',
                            '<div class="ngrs-handle ngrs-handle-max"><i></i></div>',
                            '<div class="ngrs-join"></div>',
+                           '<div class="ngrs-limit-left"></div>',
+                           '<div class="ngrs-limit-right"></div>',
                          '</div>',
                          '<div class="ngrs-value-runner">',
                            '<div class="ngrs-value ngrs-value-min" ng-show="showValues"><div>{{filteredModelMin}}</div></div>',
@@ -113,6 +115,8 @@
                 max: '=',
                 modelMin: '=?',
                 modelMax: '=?',
+                limitMin: '=?',
+                limitMax: '=?',
                 onHandleDown: '&', // calls optional function when handle is grabbed
                 onHandleUp: '&', // calls optional function when handle is released 
                 orientation: '@', // options: horizontal | vertical | vertical left | vertical right
@@ -135,6 +139,8 @@
                     handles = [element.find('.ngrs-handle-min'), element.find('.ngrs-handle-max')],
                     values = [element.find('.ngrs-value-min'), element.find('.ngrs-value-max')],
                     join = element.find('.ngrs-join'),
+                    limitLeft = element.find('.ngrs-limit-left'),
+                    limitRight = element.find('.ngrs-limit-right'),
                     pos = 'left',
                     posOpp = 'right',
                     orientation = 0,
@@ -251,6 +257,9 @@
 
                 scope.$watch('modelMin', setModelMinMax);
                 scope.$watch('modelMax', setModelMinMax);
+
+                scope.$watch('limitMin', setLimitMinMax);
+                scope.$watch('limitMax', setLimitMinMax);
 
                 /**
                  * HANDLE CHANGES
@@ -389,9 +398,45 @@
 
                             // ensure min handle can't be hidden behind max handle
                             if (handle1pos >  95) {
-                                angular.element(handles[0]).css('z-index', 3);
+                                angular.element(handles[0]).css('z-index', 4);
                             }
                         }
+
+                    }
+                    setLimitMinMax();
+                }
+
+                function setLimitMinMax () {
+
+                    if (angular.isDefined(scope.limitMin) && angular.isDefined(scope.limitMax)) {
+                        var left   = 0,
+                            right  = 0;
+
+                        if( scope.limitMin > scope.limitMax ){
+                            throwWarning('limitMin must be less than or equal to limitMax');
+                            // reset values to correct
+                            scope.limitMin = scope.limitMax;
+                        }
+
+                        // make sure they are numbers
+                        if (!isNumber(scope.limitMin)) {
+                            throwWarning('limitMin must be a number');
+                            scope.limitMin = null;
+                        }
+
+                        if (!isNumber(scope.limitMax)) {
+                            throwWarning('limitMax must be a number');
+                            scope.limitMax = null;
+                        }
+
+                        var handle1pos = restrict(((scope.modelMin - scope.min) / range) * 100),
+                            handle2pos = restrict(((scope.modelMax - scope.min) / range) * 100);
+
+                        left    = restrict(((scope.limitMin - scope.min) / range) * 100);
+                        right   = restrict(((scope.limitMax - scope.min) / range) * 100);
+
+                        limitLeft.css(pos, handle1pos+"%").css(posOpp, (100 - left ) + '%');
+                        limitRight.css(pos, ( right ) + '%').css(posOpp, ( 100 - handle2pos )+'%');
 
                     }
 

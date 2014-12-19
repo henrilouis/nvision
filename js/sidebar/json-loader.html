@@ -1,0 +1,4 @@
+<div ng-class="{'has-error': (sidebarCtrl.dataError === true)}" class="data-loader">
+    <input class="form-control" ng-model="sidebarCtrl.dataUrl" ng-bind="sidebarCtrl.dataUrl">
+    <button ng-click="sidebarCtrl.loadData(sidebarCtrl.dataUrl)" title="Load Data" class="btn btn-default"><span class="glyphicon glyphicon-cloud-download"></span></button>
+</div>

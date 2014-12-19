@@ -1,0 +1,6 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li ng-repeat="(key,sheet) in navCtrl.sheets" ng-click="navCtrl.selectSheet(sheet)" role="presentation" ng-class="{active: sheet.active === true}"><a href='#'>Sheet {{key+1}}<span ng-click="navCtrl.removeSheet(sheet)" class="glyphicon glyphicon-remove"></span></a></li>
+    <li ng-click="navCtrl.addSheet()">
+    	<a href='#'><span class="glyphicon glyphicon-plus"></span></a>
+    </li>
+</ul>

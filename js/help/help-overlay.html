@@ -1,0 +1,45 @@
+<div id="overlay-header" ng-click="helpCtrl.enabled = !helpCtrl.enabled">
+	<h2>application data flow</h2>
+</div>
+
+<div id="overlay-sidebar" ng-click="helpCtrl.enabled = !helpCtrl.enabled">
+
+	<div class="line-horizontal corner"></div>
+	
+	<div class="corner-dimensions line-vertical"></div>
+
+	<div class="dimensions box">
+		<h3 style="margin-bottom:3px">GLOBAL FILTERS</h3>
+		<div class="dimfilter">
+		</div>
+	</div>
+
+	<div class="arrow-up"></div>
+
+	<div class="dimensions-database line-vertical"></div>
+
+	<div class="database">
+		<img ng-src="img/cloud.svg" title="Database">
+		<h3 style="margin-top:10px">database</h3>
+	</div>
+</div>
+
+<div id="overlay-visualizations" ng-click="helpCtrl.enabled = !helpCtrl.enabled">
+	<div style="margin-top:8px; float:left" class="arrow-right"></div>
+	<h3 style="width:106px" class="sheetstyle">Sheets</h3>
+	<div class="clearfix"></div>
+	<div class="line-vertical" style="height:30px; margin-left:87px"></div>
+	<div class="line-horizontal sheet-dim-line"></div>
+	<div style="margin-top:-7px; float:left" class="arrow-right"></div>
+	<div class='box'>
+		<h3 style="float:none; border-bottom: 5px solid white; padding-bottom: 3px; margin-bottom: 0px;">Dimensions</h3>
+		<h3 style="float:none; margin-bottom: 3px;">Sheet Filters</h3>
+	</div>
+	<div class="line-horizontal dim-vis-line"></div>
+	<div style="height:20%; float:left" class="line-vertical"></div>
+	<div class="overlay-vis">
+		<div style="float:left; margin-left: 78px;" class="arrow-down"></div>
+		<img style="width: 175px; margin: auto;" ng-src="img/barchart_white.svg" title="Bar Chart" src="img/barchart_white.svg">
+		<h3 style="margin-top: -12px;">visualization</h3>
+	</div>
+</div>

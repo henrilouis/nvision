@@ -19,56 +19,42 @@
         <link rel="stylesheet" href="css/angular.rangeSlider.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body ng-app="nVision" ng-controller="dataController as dataCtrl">
-    <div style="height:100%" ng-controller="visualizations as visCtrl">
+    <body ng-app="nVision">
+    <div style="height:100%" ng-controller="navController as navCtrl">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>   
+        <header id="nav-header">   
 
             <div id="logoBox">
                 <h1><span class="green">N</span>VISION</h1>
             </div>
 
-            <nav id="navigation">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li ng-repeat="visualization in visCtrl.visualizations" ng-click="visCtrl.setVis(visualization);" role="presentation" ng-class="{active: (visualization.enabled === true)}"> <a href="#"><img ng-src="{{visualization.iconUrl}}" title="{{visualization.name}}"></a></li>
-                </ul>
+            <nav tabs id="navigation">
             </nav>
-
-           <!--  <div id="filterBox">
-                <string-filter></string-filter>
-            </div> -->
 
         </header>
         
-        <nav id="sidebar">
+        <nav id="sidebar" ng-controller="sidebarController as sidebarCtrl">
             <!-- Dimension list -->
             <h3>Dimensions</h3>
             <dimension-list></dimension-list>
+            <h3 style="margin-top: 15px;">Global Filters</h3>
+            <global-filters></global-filters>
             <div class="clearfix"></div>
-            
-            
-            <div ng-class="{'has-error': (dataCtrl.dataError === true)}" class="data-loader">
-                <input class="form-control" ng-model="dataCtrl.dataUrl" ng-bind="dataCtrl.dataUrl">
-                <button ng-click="dataCtrl.loadData(dataCtrl.dataUrl)" title="Load Data" class="btn btn-default"><span class="glyphicon glyphicon-cloud-download"></span></button>
-            </div>
+            <json-loader></json-loader>
         </nav>
         
         <section id="visualizations" class="with-transitions">
-            <scatter-chart ng-show="visCtrl.visualizations[0].enabled" data="dataCtrl.filteredData"></scatter-chart>
-            <line-chart ng-show="visCtrl.visualizations[1].enabled" data="dataCtrl.filteredData"></line-chart>
-            <!-- <line-with-focus-chart data="ndataCtrl.filteredData"></line-with-focus-chart> -->
-            <stacked-area-chart ng-show="visCtrl.visualizations[2].enabled" data="dataCtrl.filteredData"></stacked-area-chart>
-            <multi-bar-chart ng-show="visCtrl.visualizations[3].enabled" data="dataCtrl.filteredData"></multi-bar-chart>
-            <pie-chart ng-show="visCtrl.visualizations[4].enabled" data="dataCtrl.filteredData"></pie-chart>
-
-            <div ng-show="visCtrl.visualizations[5].enabled" id="tablesContainer">
-                <datatable ng-repeat="table in dataCtrl.filteredData">
-                </datatable>
-            </div>
+            <sheet ng-repeat="sheet in navCtrl.sheets" ng-show="sheet.active" ng-controller="sheetController as sheetCtrl" class="sheet">
+            </sheet>
         </section>
 
+        <div id="help" ng-controller="helpController as helpCtrl">
+            <help-button></help-button>
+            <help-overlay ng-show='helpCtrl.enabled'></help-overlay>
+        </div>
+        
         <script src="js/vendor/jquery-1.11.1.min.js"></script>
         <script src="js/vendor/jquery-ui.min.js"></script>
         <script src="js/vendor/jquery-ui-touch-punch.min.js"></script>
@@ -80,10 +66,12 @@
         <script src="js/vendor/angular.rangeSlider.js"></script>
         
         <!-- Angular javascript files -->
-        <script src="js/directives/filters.js"></script>
-        <script src="js/directives/framework.js"></script>
-        <script src="js/directives/visualizations.js"></script>      
-
+        <script src="js/header/header.js"></script> 
+        <script src="js/services/services.js"></script> 
+        <script src="js/sheets/sheets.js"></script>
+        <script src="js/sidebar/sidebar.js"></script>
+        <script src="js/help/help.js"></script> 
+        <script src="js/visualizations/visualizations.js"></script>
         <script src="js/app.js"></script>
     </div>
     </body>

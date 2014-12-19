@@ -1,0 +1,18 @@
+<ul ng-show="sheetCtrl.visualization">
+	<div class="title">Sheet Filters:</div>
+	<div style="float:left">
+		<div class="dropbar" ng-repeat="(key, dimension) in filters">
+			<li ng-class="{ 'filled':dimension.name }" jqyoui-droppable jqyoui-options="{activeClass: 'ui-state-default', hoverClass: 'ui-state-hover', accept: ':not(.string)'}" data-drop="true" ng-model='dimension'>{{ dimension.name }}
+			</li>
+			<div class="icon">
+				<span ng-click="sheetCtrl.removeFilter($index)" class='glyphicon glyphicon-remove'></span>
+			</div>
+			<div on-handle-up="sheetCtrl.filterChange()" ng-hide="(dimension.min == 0 && dimension.max == 0) || !dimension" range-slider min="dimension.min" max="dimension.max" model-min="dimension.userMin" model-max="dimension.userMax" limit-min="dimension.limitMin" limit-max="dimension.limitMax" attach-Handle-values="true"></div>
+		</div>
+	
+		<div class="dropbar">
+			<li jqyoui-droppable jqyoui-options="{activeClass: 'ui-state-default', hoverClass: 'ui-state-hover', accept: ':not(.string)'}" data-drop="true" ng-model='filters[filters.length]'>
+			</li>
+		</div>
+	</div>
+</ul>
