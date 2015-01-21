@@ -68,7 +68,43 @@
 					  	var chart = nv.models.scatterChart()
 					                .showDistX(true)
 					                .showDistY(true)
-					                .tooltipContent(function( key, x, y, e ) { return '<h3>' +  key + '</h3>';});
+					                .tooltipContent(function( key, x, y, e ) { 
+					                	/*return '<h3>' +  key + '</h3>' + scope.dimensions.x.name + ': ' + x + scope.dimensions.y.name + ': ' + y ;*/
+					                	var string = 
+					                	'<table class="nv-pointer-events-none">'+
+					                		'<thead>'+
+					                			'<tr class="nv-pointer-events-none">'+
+					                				'<td colspan="3" class="nv-pointer-events-none">'+
+					                					'<strong class="x-value">'+
+					                						key;
+					                						// Addition for the cars dataset specific
+					                						if( typeof e.point.name !== 'undefined' ) string += ': '+e.point.name;
+					                		string+=
+					                					'</strong>'+
+					                				'</td>'+
+					                			'</tr>'+
+					                		'</thead>'+
+					                		'<tbody>'+
+					                			'<tr class="nv-pointer-events-none">'+
+					                				'<td class="key nv-pointer-events-none">'+
+					                					scope.dimensions.x.name+
+					                				'</td>'+
+					                				'<td class="value nv-pointer-events-none">'+
+					                					x+
+					                				'</td>'+
+					                			'</tr>'+
+					                			'<tr class="nv-pointer-events-none">'+
+					                				'<td class="key nv-pointer-events-none">'+
+					                					scope.dimensions.y.name+
+					                				'</td>'+
+					                				'<td class="value nv-pointer-events-none">'+
+					                					y+
+					                				'</td>'+
+					                			'</tr>'+
+					                		'</tbody>'+
+					                	'</table>';
+					                	return string;
+					                });
 					                //.tooltipContent(function( key, x, y, e ) { return '<h3>' +  e.point.name + '</h3>';});				    
 					    // CHROME FIX
 					    d3.rebind('clipVoronoi');
@@ -87,6 +123,27 @@
 	                            svg.datum(data)
                                    .transition().duration(500)
                                    .call(chart);
+
+                                // remove axis labels
+								if(svg){
+									svg.selectAll(".x-label").remove();
+									svg.selectAll(".y-label").remove()
+								}
+                                // Add axis labels
+                                svg.append("text")
+								.attr("class", "x-label")
+								.attr("text-anchor","end")
+								.attr("x","99%")
+								.attr("y","98.5%")
+								.text(scope.dimensions.x.name);
+
+								svg.append("text")
+								.attr("class", "y-label")
+								.attr("text-anchor","end")
+								.attr("y",25)
+								.attr("x", -25)
+								.attr("transform", "rotate(-90)")
+								.text(scope.dimensions.y.name);
 	                        }
                     	}
 
@@ -177,6 +234,27 @@
 	                            svg.datum(data)
                                    .transition().duration(500)
                                    .call(chart);
+
+                                // remove axis labels
+								if(svg){
+									svg.selectAll(".x-label").remove();
+									svg.selectAll(".y-label").remove()
+								}
+                                // Add axis labels
+                                svg.append("text")
+								.attr("class", "x-label")
+								.attr("text-anchor","end")
+								.attr("x","99%")
+								.attr("y","98.5%")
+								.text(scope.dimensions.x.name);
+
+								svg.append("text")
+								.attr("class", "y-label")
+								.attr("text-anchor","end")
+								.attr("y",25)
+								.attr("x", -25)
+								.attr("transform", "rotate(-90)")
+								.text(scope.dimensions.y.name);
 	                        }
                     	}
 
@@ -268,6 +346,27 @@
 	                            svg.datum(data)
                                    .transition().duration(500)
                                    .call(chart);
+
+                                // remove axis labels
+								if(svg){
+									svg.selectAll(".x-label").remove();
+									svg.selectAll(".y-label").remove()
+								}
+                                // Add axis labels
+                                svg.append("text")
+								.attr("class", "x-label")
+								.attr("text-anchor","end")
+								.attr("x","99%")
+								.attr("y","98.5%")
+								.text(scope.dimensions.x.name);
+
+								svg.append("text")
+								.attr("class", "y-label")
+								.attr("text-anchor","end")
+								.attr("y",25)
+								.attr("x", -25)
+								.attr("transform", "rotate(-90)")
+								.text(scope.dimensions.y.name);
 	                        }
                     	}
 
@@ -360,6 +459,27 @@
 	                            svg.datum(data)
                                    .transition().duration(500)
                                    .call(chart);
+
+                                // remove axis labels
+								if(svg){
+									svg.selectAll(".x-label").remove();
+									svg.selectAll(".y-label").remove()
+								}
+                                // Add axis labels
+                                svg.append("text")
+								.attr("class", "x-label")
+								.attr("text-anchor","end")
+								.attr("x","99%")
+								.attr("y","98.5%")
+								.text(scope.dimensions.x.name);
+
+								svg.append("text")
+								.attr("class", "y-label")
+								.attr("text-anchor","end")
+								.attr("y",25)
+								.attr("x", -25)
+								.attr("transform", "rotate(-90)")
+								.text(scope.dimensions.y.name);
 	                        }
                     	}
 

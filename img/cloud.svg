@@ -4,13 +4,9 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="110.785px" height="77px" viewBox="0 0 110.785 77" enable-background="new 0 0 110.785 77" xml:space="preserve">
 <g id="Layer_1">
-	<path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-miterlimit="10" d="M79.789,73.497
+	<path fill="#F2F2F2" stroke="#CCCCCC" stroke-width="7" stroke-miterlimit="10" d="M79.789,73.497
 		c15.196-0.068,27.496-12.405,27.496-27.618c0-15.255-12.367-27.622-27.622-27.622c-4.918,0-9.531,1.291-13.531,3.544
 		C62.85,11.2,52.971,3.5,41.292,3.5c-14.359,0-26,11.641-26,26c0,2.229,0.281,4.392,0.809,6.457C8.745,38.712,3.5,45.787,3.5,54.104
 		c0,10.168,7.828,18.575,17.784,19.396L79.789,73.497z"/>
-</g>
-<g id="Layer_2">
-</g>
-<g id="Layer_3">
 </g>
 </svg>

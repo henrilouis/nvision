@@ -105,8 +105,8 @@
                            '<div class="ngrs-limit-right"></div>',
                          '</div>',
                          '<div class="ngrs-value-runner">',
-                           '<div class="ngrs-value ngrs-value-min" ng-show="showValues"><div>{{filteredModelMin}}</div></div>',
-                           '<div class="ngrs-value ngrs-value-max" ng-show="showValues"><div>{{filteredModelMax}}</div></div>',
+                           '<div class="ngrs-value ngrs-value-min" ng-show="showValues"><input type="text" ng-model="modelMin" ng-change="onHandleUp()"></div>',
+                           '<div class="ngrs-value ngrs-value-max" ng-show="showValues"><input type="text" ng-model="modelMax" ng-change="onHandleUp()"></div>',
                          '</div>',
                        '</div>'].join(''),
             scope: {
@@ -315,11 +315,11 @@
 
                 function setModelMinMax () {
 
-                    if (scope.modelMin > scope.modelMax) {
-                        throwWarning('modelMin must be less than or equal to modelMax');
-                        // reset values to correct
-                        scope.modelMin = scope.modelMax;
-                    }
+                    // if (scope.modelMin > scope.modelMax) {
+                    //     throwWarning('modelMin must be less than or equal to modelMax');
+                    //     // reset values to correct
+                    //     scope.modelMin = scope.modelMax;
+                    // }
 
                     // only do stuff when both values are ready
                     if (
@@ -350,8 +350,9 @@
                               value2pos = handle2pos;
                         }
 
-                        // make sure the model values are within the allowed range
-                        scope.modelMin = Math.max(scope.min, scope.modelMin);
+                        // make sure the model values are within the allowed range !!! commented out for input to work
+                        // still needs to be fixed so modelMin can be below min just for typing
+                        //scope.modelMin = Math.max(scope.min, scope.modelMin);
                         scope.modelMax = Math.min(scope.max, scope.modelMax);
 
                         if (scope.filter) {

@@ -6,7 +6,9 @@
 
 		var data = [];
 		var dimensions = [];
+		var arrowsEnabled = false;
 		var globalFilter;
+		var dataLength;
 
 		/*-----------------------------------------------------*\
 			@desc
@@ -54,6 +56,7 @@
 		var loadData = function(url){
 			$http.get( url ).success( function( d ) {
 				data = d;
+				dataLength = 0;
 				dimensions = [];
 				$.each( data[0]['values'][0], function( key, value ){
 					var dimension = {};
@@ -65,6 +68,11 @@
 						dimension.assigned  = "";
 					dimensions.push(dimension);
 				});
+
+				angular.forEach( data, function( value, key ){
+					dataLength += value.values.length;
+				});
+
 				$rootScope.$broadcast('data-loaded');
 				return true;
 			}).error(function(data){
@@ -131,13 +139,22 @@
 			$rootScope.$broadcast('filter-change');
 		}
 
+		var setArrowsEnabled = function( bool ){
+			arrowsEnabled = bool;
+		}
+
 		return{
+
 			loadData: loadData,
 			getData: function(){ return data; },
 			getDimensions: function(){ return angular.copy(dimensions); },
 			filterData: function( data, filter ){ return filterData( data, filter );},
 			getGlobalFilter: function(){ return globalFilter;},
-			setGlobalFilter: setGlobalFilter
+			setGlobalFilter: setGlobalFilter,
+			getArrowsEnabled: function(){ return arrowsEnabled; },
+			setArrowsEnabled: setArrowsEnabled,
+			getDataLength: function(){ return dataLength; }
+			
 		}
 
 	}]);

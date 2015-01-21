@@ -1,18 +1,44 @@
-<ul ng-show="sheetCtrl.visualization">
-	<div class="title">Sheet Filters:</div>
-	<div style="float:left">
-		<div class="dropbar" ng-repeat="(key, dimension) in filters">
-			<li ng-class="{ 'filled':dimension.name }" jqyoui-droppable jqyoui-options="{activeClass: 'ui-state-default', hoverClass: 'ui-state-hover', accept: ':not(.string)'}" data-drop="true" ng-model='dimension'>{{ dimension.name }}
-			</li>
-			<div class="icon">
-				<span ng-click="sheetCtrl.removeFilter($index)" class='glyphicon glyphicon-remove'></span>
-			</div>
-			<div on-handle-up="sheetCtrl.filterChange()" ng-hide="(dimension.min == 0 && dimension.max == 0) || !dimension" range-slider min="dimension.min" max="dimension.max" model-min="dimension.userMin" model-max="dimension.userMax" limit-min="dimension.limitMin" limit-max="dimension.limitMax" attach-Handle-values="true"></div>
+<ul>
+	<div ng-if="sheetCtrl.dataService.getArrowsEnabled()" class='infoflow top' ng-style="{'width': sheetCtrl.calculateFilterPercentage(-1)*0.4+'%' }"> {{ sheetCtrl.calculateFilterPercentage(-1) | number : 0 }}%</div>
+	<div class="dropbar" ng-repeat="(key, dimension) in filters">
+		<li ng-class="{ 'filled':dimension.name }" jqyoui-droppable jqyoui-options="{activeClass: 'ui-state-default', hoverClass: 'ui-state-hover', accept: '.ui-draggable:not(.string)'}" data-drop="true" ng-model='filters[key]'>{{ dimension.name }}
+		</li>
+		<div class="icon">
+			<span ng-click="sheetCtrl.removeFilter($index)" class='glyphicon glyphicon-remove'></span>
 		</div>
-	
-		<div class="dropbar">
-			<li jqyoui-droppable jqyoui-options="{activeClass: 'ui-state-default', hoverClass: 'ui-state-hover', accept: ':not(.string)'}" data-drop="true" ng-model='filters[filters.length]'>
-			</li>
-		</div>
+		<div on-handle-up="sheetCtrl.filterChange()" ng-hide="(dimension.min == 0 && dimension.max == 0) || !dimension" range-slider min="dimension.min" max="dimension.max" model-min="dimension.userMin" model-max="dimension.userMax" limit-min="dimension.limitMin" limit-max="dimension.limitMax" show-values="true"></div>
+
+		<div ng-if="sheetCtrl.dataService.getArrowsEnabled()" class='infoflow' ng-style="{'width': sheetCtrl.calculateFilterPercentage($index)*0.4+'%' }"> {{ sheetCtrl.calculateFilterPercentage($index) | number : 0 }}%</div>
 	</div>
+	
+	<div class="dropbar">
+		<li jqyoui-droppable jqyoui-options="{activeClass: 'ui-state-default', hoverClass: 'ui-state-hover', accept: '.ui-draggable:not(.string)'}" data-drop="true" ng-model='filters[filters.length]'>
+		</li>
+	</div>
+
+	<div class="infoflowcurve"
+	ng-if="sheetCtrl.dataService.getArrowsEnabled()" 
+	ng-style="{
+	'width': ((sheetCtrl.calculateFilterPercentage(filters.length-1)/100)*132)+'px', 
+	'height': ((sheetCtrl.calculateFilterPercentage(filters.length-1)/100)*132)+'px', 
+	'margin-left': (83-((sheetCtrl.calculateFilterPercentage(filters.length-1)/100)*33))+'px' }">
+		<div class="vertical">
+		</div>
+		<div class="base">
+		</div>
+		<div class="overlay">
+		</div>
+		<div class="horizontal"></div>
+		<div class="arrow"
+		ng-style="{
+			'border-top': ((sheetCtrl.calculateFilterPercentage(filters.length-1)/100)*33)+'px solid transparent',
+			'border-left': ((sheetCtrl.calculateFilterPercentage(filters.length-1)/100)*33)+'px solid #ccc',
+			'border-bottom': ((sheetCtrl.calculateFilterPercentage(filters.length-1)/100)*33)+'px solid transparent',
+		}">
+		</div>
+
+	</div>
+
+
+
 </ul>

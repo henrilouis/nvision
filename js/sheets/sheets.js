@@ -20,9 +20,10 @@
 
 		\*-------------------------------------------*/
 		var data;
+		this.dataService = dataService;
 		this.visualizations = visualizationList;
 		this.visualization = false;
-		$scope.filters = []; //// the this call is causing the error in the refreshData function
+		$scope.filters = [];
 		var vis = false;
 
 		$scope.dimensions = {};
@@ -34,30 +35,39 @@
 			else{
 				data = dataService.filterData( dataService.getData(), dataService.getGlobalFilter() );
 			}
+			adjustLocalLimit();
 		}
 
 		// Shows how the global filter effects the local one
 		var adjustLocalLimit = function(){
-			angular.forEach( dataService.getGlobalFilter(), function( dimension, key ){
-				angular.forEach ( $scope.filters, function( d,k ){
+
+			angular.forEach( $scope.filters, function(d,k){
+				var bool = false;
+				angular.forEach( dataService.getGlobalFilter(), function( dimension, key ){
 					if( dimension.name == d.name ){
+						bool = true;
 						d.limitMin = dimension.userMin;
 						d.limitMax = dimension.userMax;
 					}
 				});
+				if(!bool){
+					d.limitMin = d.min;
+					d.limitMax = d.max;
+				}
 			});
-		}
+
+		};
 
 		var checkDimensions = function( dim ){
 			var count = 0;
 			var secondCount = 0;
+
 			angular.forEach( vis.dimensions, function( dimension,key ){
 				count++;
 			});
 
    			angular.forEach(dim, function( dimension,key ){
-   				if( key != "filter" ) // excluding the extra local filter in the dimension list
-   					secondCount++;
+   				secondCount++;
    			});
 
    			if( secondCount >= count && count != 0 ){
@@ -76,11 +86,24 @@
 		this.getData = function(){
 			return data;
 		}
-		
+
 		this.selectVis = function( visualization ){
 			this.visualization = visualization;
 			vis = visualization;
 			checkDimensions( $scope.dimensions );
+
+			// for fixing the bug with drag and drop acceptance
+			// it rerenders the dimension-drop directive
+			// $scope.$broadcast('refresh');
+			// console.log('yes');
+
+			// Delay hack
+			var delay = 1;
+			$timeout(function(){
+				$scope.$broadcast('refresh');
+			}, delay);
+
+			
 		}
 
 		this.removeDim = function( key ){
@@ -100,6 +123,28 @@
 			}, delay);
 		}
 
+		// This function calculates how many items are left after the filter and the previous filters are applied.
+		// It is useful for determining the 'model clarification' data flow.
+		this.calculateFilterPercentage = function( number ){
+
+			var count = 0;
+			var tempFilter = [];
+			var percentage;
+			
+			for(i=0; i<=number; i++){
+				tempFilter.push($scope.filters[i]);
+			}
+
+			angular.forEach( dataService.filterData( dataService.filterData( dataService.getData(), dataService.getGlobalFilter() ), tempFilter ),function( value,key ){
+				count += value.values.length;
+			});
+
+			percentage = ( count/dataService.getDataLength() ) * 100; 
+			
+			return percentage;
+			
+		}
+
 		/*---------------------------------*\
 				
 					Listeners
@@ -109,18 +154,24 @@
 		$scope.$on( 'data-loaded', function(){
 			refreshData();
 			$scope.dimensions = {};
+			$scope.filters = [];
 		});
 
 		$scope.$on( 'filter-change', function(){
 			refreshData();
-			adjustLocalLimit();
 		});
 
 		$scope.$watchCollection('dimensions', function(newData,oldData){
    			if(newData != oldData){
    				checkDimensions( newData );
-   				adjustLocalLimit();
    			}
+		});
+
+		$scope.$watchCollection('filters',function(newData,oldData){
+			if(newData != oldData){
+				adjustLocalLimit();
+				refreshData();
+			}
 		});
 
 		/*---------------------------------*\

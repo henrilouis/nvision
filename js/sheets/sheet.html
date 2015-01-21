@@ -1,10 +1,47 @@
-<header id="sheet-header">
-	<ul class="visSelector">
-	    <li ng-repeat="visualization in sheetCtrl.visualizations" ng-click="sheetCtrl.selectVis(visualization)"><button class="btn btn-default" ng-class="{active: sheetCtrl.visualization === visualization}"><img ng-src="{{visualization.iconUrl}}" title="{{visualization.name}}"></button></li>
-	</ul>
-	<dimension-drop></dimension-drop>
-	<local-filters></local-filters>
-</header>
+<nav class="sheet-sidebar" ng-class="{'arrowsenabled': sheetCtrl.dataService.getArrowsEnabled()}">
+	<div class='vertical-half' style="border-bottom: thin dashed #ddd" ng-style="sheetCtrl.dataService.getArrowsEnabled() && {'height':'25%'}">
+		<h3 style="padding-top:15px">Dimension input</h3>
+		<dimension-drop></dimension-drop>
+	</div>
+	<div class="vertical-half" ng-style="sheetCtrl.dataService.getArrowsEnabled() && {'height':'75%'}">
+		<div class="infoflowcurvecontainer" ng-if="sheetCtrl.dataService.getArrowsEnabled()" >
+			<div class="infoflowcurve"
+			ng-style="{
+			'width': ((sheetCtrl.calculateFilterPercentage(-1)/100)*132)+'px', 
+			'height': ((sheetCtrl.calculateFilterPercentage(-1)/100)*132)+'px', 
+			'margin-left': (97.5-((sheetCtrl.calculateFilterPercentage(-1)/100)*99))+'px' }">
+				
+				<div class="base">
+				</div>
+				<div class="overlay">
+				</div>
+				<div class="horizontal">
+				</div>				
+				<div class="vertical">
+				</div>
+
+			</div>
+		</div>
+		<div ng-if="sheetCtrl.dataService.getArrowsEnabled()" class="topshadow" style="background-color:#fff"></div>
+		<h3 style="margin-top:15px">Sheet Filters</h3>
+		<div ng-if="sheetCtrl.dataService.getArrowsEnabled()" class="bottomshadow" style="background-color:#fff"></div>
+		<local-filters></local-filters>
+	</div>
+</nav>
+
+<div class="select-dimensions" ng-hide="dimensionsSet">
+	<div class="textbox">
+		<h3 ng-show="sheetCtrl.visualization != false">Drag dimensions to input</h3>
+		<p ng-show="sheetCtrl.visualization != false">Drag the dimensions you require from the list in the top left to the dimension input. The visualization requires all inputs to be selected.</p>
+		<h3 ng-hide="sheetCtrl.visualization != false">Select a visualization</h3>
+		<p ng-hide="sheetCtrl.visualization != false">You can toggle the different visualizations for this sheet using the buttons in the top right corner.</p>
+	</div>
+</div>
+
+<ul class="visSelector">
+    <li ng-repeat="visualization in sheetCtrl.visualizations" ng-click="sheetCtrl.selectVis(visualization)"><button class="btn btn-default" ng-class="{active: sheetCtrl.visualization === visualization}"><img ng-src="{{visualization.iconUrl}}" title="{{visualization.name}}"></button></li>
+</ul>
+
 <section id="visualization">
 
 </section>

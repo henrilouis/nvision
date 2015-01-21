@@ -1,0 +1,4 @@
+<button class="btn btn-danger" ng-click="experimentCtrl.overlay = !experimentCtrl.overlay">
+	<span class="glyphicon" ng-class="{'glyphicon-arrow-up':!experimentCtrl.overlay, 'glyphicon-arrow-down':experimentCtrl.overlay}"></span>
+	{{experimentCtrl.overlay ? 'Hide assignments':'Show assignments'}}
+</button>

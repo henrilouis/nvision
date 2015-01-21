@@ -186,7 +186,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  padding: 5px 0 0 0;
+  padding: 2px 0 0 0;
   font-size: 12px;
   color: #999;
 }
@@ -369,4 +369,26 @@
 /* line 404, scss/angular.rangeSlider.scss */
 body.ngrs-touching {
   -ms-touch-action: none;
+}
+
+
+  
+/*-----------------------------------*\
+          
+          HENRI's Additions
+
+\*-----------------------------------*/
+
+.ngrs-range-slider .ngrs-value-runner input{
+  cursor: auto;
+  background: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  width:50%;
+}
+
+.ngrs-range-slider .ngrs-value-runner .ngrs-value-max input{
+  text-align: right;
+  float: right;
 }

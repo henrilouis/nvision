@@ -17,10 +17,12 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/nv.d3.css">
         <link rel="stylesheet" href="css/angular.rangeSlider.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body ng-app="nVision">
-    <div style="height:100%" ng-controller="navController as navCtrl">
+    <body ng-app="nVision" ng-controller="experimentController as experimentCtrl">
+    
+    <div style="height:100%" class="maincontainer" ng-class="{'overlay':!(( experimentCtrl.phase > 1 && experimentCtrl.phase < 7) || experimentCtrl.phase == 9)}" ng-controller="navController as navCtrl">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -35,28 +37,65 @@
 
         </header>
         
-        <nav id="sidebar" ng-controller="sidebarController as sidebarCtrl">
+        <nav id="sidebar" ng-controller="sidebarController as sidebarCtrl" ng-class="{'arrowsenabled': sidebarCtrl.dataService.getArrowsEnabled()}">
             <!-- Dimension list -->
-            <h3>Dimensions</h3>
-            <dimension-list></dimension-list>
-            <h3 style="margin-top: 15px;">Global Filters</h3>
-            <global-filters></global-filters>
-            <div class="clearfix"></div>
-            <json-loader></json-loader>
+            <div class="vertical-half" style="border-bottom: thin dashed #ddd;" ng-style="sidebarCtrl.dataService.getArrowsEnabled() && {'height':'25%'}">
+
+
+                <h3 style="padding-top:15px">Dimensions</h3>
+                <dimension-list></dimension-list>
+
+
+            </div>
+            
+            <div class="vertical-half" ng-style="sidebarCtrl.dataService.getArrowsEnabled() && {'height':'75%'}">
+                
+
+                <div class="infoflowcurvecontainer" ng-if="sidebarCtrl.dataService.getArrowsEnabled()" >
+                    <div class="infoflowcurve"
+                    ng-style="{
+                    'width': ((sidebarCtrl.calculateFilterPercentage(0)/100)*132)+'px', 
+                    'height': ((sidebarCtrl.calculateFilterPercentage(0)/100)*132)+'px',
+                    'margin-left': 97.5-((sidebarCtrl.calculateFilterPercentage(0)/100)*33)+'px'
+                    }">
+                        
+                        <div class="base">
+                        </div>
+                        <div class="overlay">
+                        </div>
+                        <div class="horizontal">
+                        </div>
+                        <div class="vertical">
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div ng-if="sidebarCtrl.dataService.getArrowsEnabled()" class="topshadow"></div>
+                <h3 style="margin-top: 15px;">Global Filters</h3>
+                <div ng-if="sidebarCtrl.dataService.getArrowsEnabled()" class="bottomshadow"></div>
+                <global-filters></global-filters>
+
+
+            </div>
         </nav>
         
         <section id="visualizations" class="with-transitions">
             <sheet ng-repeat="sheet in navCtrl.sheets" ng-show="sheet.active" ng-controller="sheetController as sheetCtrl" class="sheet">
             </sheet>
         </section>
-
-        <div id="help" ng-controller="helpController as helpCtrl">
-            <help-button></help-button>
-            <help-overlay ng-show='helpCtrl.enabled'></help-overlay>
-        </div>
         
-        <script src="js/vendor/jquery-1.11.1.min.js"></script>
-        <script src="js/vendor/jquery-ui.min.js"></script>
+        <section id="help">
+            <div class="textbox">
+                <h3 ng-show="navCtrl.sheets.length == 0">Add a sheet first</h3>
+                <p ng-show="navCtrl.sheets.length == 0">On the sheets you can add visualizations. The plus button on the top left enables you to add sheets.</p>
+            </div>
+        </section>
+        
+        
+        
+        <script src="js/vendor/jquery-1.11.2.js"></script>
+        <script src="js/vendor/jquery-ui.min.js"></script> 
         <script src="js/vendor/jquery-ui-touch-punch.min.js"></script>
         <script src="js/vendor/d3.min.js"></script>
         <script src="js/vendor/angular.min.js"></script> <!-- change to minified version when done -->
@@ -66,13 +105,17 @@
         <script src="js/vendor/angular.rangeSlider.js"></script>
         
         <!-- Angular javascript files -->
+        <script src="js/experiment/experiment.js"></script>
         <script src="js/header/header.js"></script> 
         <script src="js/services/services.js"></script> 
         <script src="js/sheets/sheets.js"></script>
         <script src="js/sidebar/sidebar.js"></script>
         <script src="js/help/help.js"></script> 
         <script src="js/visualizations/visualizations.js"></script>
+
         <script src="js/app.js"></script>
     </div>
+
+    <experiment-overlay ng-class="{'sm':( experimentCtrl.phase > 1 && experimentCtrl.phase < 7) || experimentCtrl.phase == 9, 'pop-down':!experimentCtrl.overlay}"></experiment-overlay>
     </body>
 </html>
