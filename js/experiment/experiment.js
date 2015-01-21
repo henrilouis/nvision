@@ -7,6 +7,11 @@
 		dataService.setArrowsEnabled(this.condition);
 		this.overlay = true;
 		this.phase = 0;
+		this.mobile = false;
+
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			this.mobile = true;
+		}
 
 		var exp = this;
 
@@ -58,7 +63,7 @@
 			"Overall, I am satisfied with this system.",
 			"Learning to operate the system is hard.",
 			"Performing tasks is straightforward."
-			
+
 		]
 
 		var log = [
@@ -103,6 +108,8 @@
 		]
 
 		this.hint = hint;
+
+
 
 		// Function to get al the information from the application
 		function getSheets(){

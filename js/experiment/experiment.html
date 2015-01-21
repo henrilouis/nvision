@@ -1,25 +1,29 @@
 <experiment-btn ng-show="( experimentCtrl.phase > 1 && experimentCtrl.phase < 7) || experimentCtrl.phase == 9"></experiment-btn>
 <div class="textbox" ng-show="experimentCtrl.phase == 0">
 	<h3>Welcome</h3>
-	
-	<p>This study is joint project of the ‘Big Data’ department of NSPYRE and the ‘Human-Technology Interaction’ department of the Eindhoven University of Technology, conducted by Henri Schröter and supervised by dr.ir. Martijn Willemsen.</p>
-	
-	<p>In this study into the usability of information visualization systems you will be asked to complete a few assignments in your browser using a system called NVISION, followed by a short questionnaire. The study will take approximately fifteen minutes.</p>
 
-	<p>All research conducted at the Human-Technology Interaction Group adheres to the Code of  Ethics of the NIP (Nederlands Instituut voor Psychologen – Dutch Institute for Psychologists). We will not be sharing personal information about you to anyone outside of the research team. The information that we collect is used for writing scientific publications and will be reported at group level. It will be completely anonymous and it cannot be traced back to you.</p>
-
-	<p>As a compensation for participating you can enroll in a lottery for winning one of ten bol.com €20 gift vouchers after completing the study.</p>
+	<p ng-show="experimentCtrl.mobile"><b><i>Mobile device detected: to prevent performance issues from affecting the study we ask you to please go back to this url using a desktop computer. Sorry for the inconvenience.</i></b></p>
 	
-	<p>Your participation is completely voluntary. You can refuse to participate without giving any reasons and you can stop your participation at any time during the experiment by closing the browser. If you have any questions you can email h.l.schroter@student.tue.nl</p>
+	<div ng-hide="experimentCtrl.mobile">
+		<p>This study is joint project of the ‘Big Data’ department of NSPYRE and the ‘Human-Technology Interaction’ department of the Eindhoven University of Technology, conducted by Henri Schröter and supervised by dr.ir. Martijn Willemsen.</p>
+		
+		<p>In this study into the usability of information visualization systems you will be asked to complete a few assignments in your browser using a system called NVISION, followed by a short questionnaire. The study will take approximately fifteen minutes.</p>
 
-	<p>"By clicking on the start button I declare that I have read and understood the previous information and agree to voluntarily participate in this study."</p>
-	<button type="button" class="btn btn-default pull-right" ng-click="experimentCtrl.phase = 1">Start</button>
+		<p>All research conducted at the Human-Technology Interaction Group adheres to the Code of  Ethics of the NIP (Nederlands Instituut voor Psychologen – Dutch Institute for Psychologists). We will not be sharing personal information about you to anyone outside of the research team. The information that we collect is used for writing scientific publications and will be reported at group level. It will be completely anonymous and it cannot be traced back to you.</p>
+
+		<p>As a compensation for participating you can enroll in a lottery for winning one of ten bol.com €20 gift vouchers after completing the study.</p>
+		
+		<p>Your participation is completely voluntary. You can refuse to participate without giving any reasons and you can stop your participation at any time during the experiment by closing the browser. If you have any questions you can email h.l.schroter@student.tue.nl</p>
+
+		<p>"By clicking on the start button I declare that I have read and understood the previous information and agree to voluntarily participate in this study."</p>
+	</div>
+	<button ng-hide="experimentCtrl.mobile" type="button" class="btn btn-default pull-right" ng-click="experimentCtrl.phase = 1">Start</button>
 </div>
 
 <div class="textbox" ng-show="experimentCtrl.phase == 1">
 	<h3>Assignment introduction</h3>
-	<p>You work at a government organisation analyzing cars. Your manager Bob wants you to create him a dashboard with three visualization-sheets he can inspect. He provides you with a dataset containing information about cars in the US between 1970 and 1982. Bob has five assignments for you to complete. Try to solve the assignments <b>as efficiently as possible</b>.</p>
-	<p><b><i>Be sure to make each assingment on an individual sheet.</i></b></p>
+	<p>You work at a government organisation analyzing cars. Your manager Bob wants you to create him a dashboard with three visualization-sheets he can inspect. He provides you with a dataset containing information about cars in the US between 1970 and 1982. Bob has five assignments for you to complete. Try to solve the assignments as efficiently as possible.</p>
+	<p><b><i>Be sure to make the first three assingment on an individual sheet.</i></b></p>
 	<button type="button" class="btn btn-default pull-right" ng-click="experimentCtrl.phase = 2">Continue</button>
 </div>
 
@@ -38,7 +42,7 @@
 
 <div class="textbox" ng-show="experimentCtrl.phase == 3">
 	<h3>Assignment 2</h3>
-	<p>Now I require you to create a new sheet containing the <b>bar chart</b> visualization. It should display the <b>names</b> of the cars and their <b>acceleration ( 0-60 mph )</b>. A requirement is that they are built in 1980 and later. Please write down the name of the fastest car.</p>
+	<p>Next I require you to <b>create a new sheet</b> containing the <b>bar chart</b> visualization. It should display the <b>names</b> of the cars and their <b>acceleration ( 0-60 mph )</b>. A requirement is that they are built in 1980 and later. Please write down the name of the fastest car.</p>
 	<div class="input-group">
 		<span class="input-group-btn">
 			<button type="button" class="btn btn-default" ng-click="experimentCtrl.phase = 2">Back</button>
