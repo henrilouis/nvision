@@ -82,25 +82,19 @@
 			{
 				"name": "assignment4",
 				"attempts":[]
-			},
-			{
-				"name": "assignment5",
-				"attempts":[]
-			}			
+			}	
 		];
 
 		// The correct answers to the questions
 		var correct = [
 			"165",
 			"datsun",
-			"175",
 			"audi",
 			"buick"
 		]
 
 		// Variable to keep track of the hints
 		var hint = [
-			false,
 			false,
 			false,
 			false,

@@ -107,6 +107,9 @@
 				for( i=0; i<data.length; i++ ){
 					var table = {};
 						table.key = data[i].key;
+						if(data[i].color != null){
+							table.color = data[i].color;
+						}
 					var values = [];
 
 					for( j=0; j<data[i].values.length; j++ ){

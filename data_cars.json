@@ -401,6 +401,7 @@
 			{"year":76,"name":"Volvo 245","economy (mpg)":20,"cylinders":4,"displacement (cc)":130,"power (hp)":102,"weight (lb)":3150,"acceleration 0-60 (s)":15.7},
 			{"year":78,"name":"Volvo 264GL","economy (mpg)":17,"cylinders":6,"displacement (cc)":163,"power (hp)":125,"weight (lb)":3140,"acceleration 0-60 (s)":13.6},
 			{"year":81,"name":"Volvo Diesel","economy (mpg)":30.7,"cylinders":6,"displacement (cc)":145,"power (hp)":76,"weight (lb)":3160,"acceleration 0-60 (s)":19.6}
-		]
+		],
+		"color":"#2ca02c"
 	}
 ]

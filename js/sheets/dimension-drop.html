@@ -1,6 +1,6 @@
 <ul>
 	<div class="dropbar" ng-repeat="(key, dimension) in sheetCtrl.visualization.dimensions">
-		<div class="title" ng-show="!dimensions[key]">{{ key }}-axis</div>
+		<div class="title" ng-show="!dimensions[key]">{{ key }}-dimension</div>
 		<li ng-class="{ 'filled':dimensions[key].name != null }" jqyoui-droppable jqyoui-options="{activeClass: 'ui-state-default', hoverClass: 'ui-state-hover', accept: ':not({{dimension.string ? 'false' : '.string'}})'}" data-drop="true" ng-model='dimensions[key]'>{{ dimensions[key].name }}
 		</li>
 		<!-- this used to be the acceptance test but it is still buggy: accept: ':not({{dimension.string ? 'false' : '.string'}})' -->

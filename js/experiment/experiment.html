@@ -1,4 +1,4 @@
-<experiment-btn ng-show="( experimentCtrl.phase > 1 && experimentCtrl.phase < 7) || experimentCtrl.phase == 9"></experiment-btn>
+<experiment-btn ng-show="( experimentCtrl.phase > 1 && experimentCtrl.phase < 6) || experimentCtrl.phase == 8"></experiment-btn>
 <div class="textbox" ng-show="experimentCtrl.phase == 0">
 	<h3>Welcome</h3>
 
@@ -22,8 +22,8 @@
 
 <div class="textbox" ng-show="experimentCtrl.phase == 1">
 	<h3>Assignment introduction</h3>
-	<p>You work at a government organisation analyzing cars. Your manager Bob wants you to create him a dashboard with three visualization-sheets he can inspect. He provides you with a dataset containing information about cars in the US between 1970 and 1982. Bob has five assignments for you to complete. Try to solve the assignments as efficiently as possible.</p>
-	<p><b><i>Be sure to make the first three assingment on an individual sheet.</i></b></p>
+	<p>You work at a government organisation analyzing cars. Your manager Bob wants you to create him a dashboard with three visualization-sheets he can inspect. He provides you with a dataset containing information about cars in the US between 1970 and 1982. Bob has four assignments for you to complete. Try to solve the assignments as efficiently as possible.</p>
+	<p><b><i>Be sure to make the first two assingment individual sheets.</i></b></p>
 	<button type="button" class="btn btn-default pull-right" ng-click="experimentCtrl.phase = 2">Continue</button>
 </div>
 
@@ -57,7 +57,9 @@
 
 <div class="textbox" ng-show="experimentCtrl.phase == 4">
 	<h3>Assignment 3</h3>
-	<p>I need a third sheet with a <b>scatter chart</b> where <b>weight</b> and <b>power</b> are plotted for the entire data-set. How much horsepower does the heaviest car have?</p>
+	<p>Good, we have all the required sheets. Make sure you get familiar with the filtering process.</p>
+
+	<p>Now filter so only cars with five to seven <b>cylinders</b> and <b>economy (mpg)</b> of 15 and more are included in the previously created sheets. What is the brand of the slowest accelerating <b>( 0-60 mph )</b> car on the second sheet?</p>
 	<div class="input-group">
 		<span class="input-group-btn">
 			<button type="button" class="btn btn-default" ng-click="experimentCtrl.phase = 3">Back</button>
@@ -67,15 +69,15 @@
 			<button type="button" class="btn btn-default" ng-class="{'btn-success':experimentCtrl.testAssignment(2)}" ng-click="experimentCtrl.verifyAssignment(2)">Continue</button>
 		</span>
 	</div>
-	<p class="text-danger" ng-show="experimentCtrl.hint[2]">Incorrect, please try again.</p>
+	<p class="text-danger" ng-show="experimentCtrl.hint[3]">Incorrect, please try again.</p>
 </div>
 
 <div class="textbox" ng-show="experimentCtrl.phase == 5">
 	<h3>Assignment 4</h3>
-	<p>Good, we have all the required sheets. Now make sure that only cars with five to seven <b>cylinders</b> and <b>economy (mpg)</b> of 15 and more are included in all the sheets and visualizations. What is the brand of the slowest accelerating <b>( 0-60 mph )</b> car on the second sheet?</p>
+	<p>With the previously assigned filtering in place, reinspect the fist sheet with the visualization of power and economy. What is the name of the only car left on this sheet?</p>
 	<div class="input-group">
 		<span class="input-group-btn">
-			<button type="button" class="btn btn-default" ng-click="experimentCtrl.phase = 4">Back</button>
+			<button type="button" class="btn btn-default" ng-click="experimentCtrl.phase = 3">Back</button>
 		</span>
 		<input type="text" class="form-control" placeholder="Answer here" ng-model="experimentCtrl.answer[3]">
 		<span class="input-group-btn">
@@ -85,22 +87,7 @@
 	<p class="text-danger" ng-show="experimentCtrl.hint[3]">Incorrect, please try again.</p>
 </div>
 
-<div class="textbox" ng-show="experimentCtrl.phase == 6">
-	<h3>Assignment 5</h3>
-	<p>With the previously assigned filtering in place, reinspect the fist sheet with the visualization of power and economy. What is the name of the only car left on this sheet?</p>
-	<div class="input-group">
-		<span class="input-group-btn">
-			<button type="button" class="btn btn-default" ng-click="experimentCtrl.phase = 5">Back</button>
-		</span>
-		<input type="text" class="form-control" placeholder="Answer here" ng-model="experimentCtrl.answer[4]">
-		<span class="input-group-btn">
-			<button type="button" class="btn btn-default" ng-class="{'btn-success':experimentCtrl.testAssignment(4)}" ng-click="experimentCtrl.verifyAssignment(4)">Continue</button>
-		</span>
-	</div>
-	<p class="text-danger" ng-show="experimentCtrl.hint[4]">Incorrect, please try again.</p>
-</div>
-
-<div class="textbox special" ng-show="experimentCtrl.phase == 7">
+<div class="textbox special" ng-show="experimentCtrl.phase == 6">
 	<h3>Well done</h3>
 	<p>Thank you for completing the assignments, Bob will be thrilled! If you would be so kind to fill out the following short questionnaire?</p>
 	<h3>Questionnaire</h3>
@@ -206,7 +193,7 @@
 	</form>
 	
 </div>
-<div class="textbox" ng-show="experimentCtrl.phase == 8">
+<div class="textbox" ng-show="experimentCtrl.phase == 7">
 	<h3>One last thing</h3>
 	<p>To be able to take part in the gift voucher lottery we require your e-mail adress to inform you if you win. Please enter the email we can contact you at below.</p>
 	<form name="emailform" ng-submit="questionnaire.$valid && experimentCtrl.submitEmail()" novalidate>
@@ -219,7 +206,7 @@
 	</form>
 </div>
 
-<div class="textbox" ng-show="experimentCtrl.phase == 9">
+<div class="textbox" ng-show="experimentCtrl.phase == 8">
 	<h3>Thanks</h3>
 	<p>You are enrolled in the lottery. You can close the window now, or play around some more with the application. I've loaded a dataset about dutch government spending for you to explore.</p>
 </div>

@@ -383,6 +383,16 @@ global-filters ul div.dimensionBox{
     clear:both;
 }
 
+global-filters ul div.dimensionBox div.title{
+    color: #AAA;
+    margin: auto;
+    position: absolute;
+    width: 165px;
+    text-align: center;
+    margin-top: 4px;
+    text-transform:uppercase;
+}
+
 .arrowsenabled global-filters ul div.dimensionBox{
     margin-bottom:-20px;
 }
@@ -531,6 +541,16 @@ nav.sheet-sidebar local-filters ul{
 
 nav.sheet-sidebar local-filters div.dropbar{
     
+}
+
+nav.sheet-sidebar local-filters div.dropbar div.title{
+    color: #AAA;
+    margin: auto;
+    position: absolute;
+    width: 165px;
+    text-align: center;
+    margin-top: 4px;
+    text-transform:uppercase;
 }
 
 nav.sheet-sidebar .title{
@@ -869,6 +889,10 @@ experiment-overlay.pop-down{
     height:0px;
 }
 
+experiment-overlay.pop-down .textbox{
+    display:none;
+}
+
 body div.maincontainer{
     transition:0.3s -webkit-filter linear;
     position:   relative;
@@ -892,6 +916,10 @@ experiment-overlay div.textbox h3{
     font-size:35px;
 }
 
+experiment-overlay.sm div.textbox h3{
+    margin-top:25px;
+}
+
 experiment-btn{
     position: relative;
     z-index: 11;
@@ -899,7 +927,6 @@ experiment-btn{
     width: 180px;
     margin: auto;
     margin-top: -45px;
-    margin-bottom: 25px;
 }
 
 experiment-overlay div.textbox .radio-inline+.radio-inline, experiment-overlay div.textbox .checkbox-inline+experiment-overlay div.textbox .checkbox-inline{
